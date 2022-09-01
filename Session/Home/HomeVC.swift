@@ -387,7 +387,7 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
         // Profile picture view
         let profilePictureSize = Values.verySmallProfilePictureSize
         let profilePictureView = ProfilePictureView()
-        profilePictureView.accessibilityLabel = "Settings button"
+        profilePictureView.accessibilityIdentifier = "Profile picture"
         profilePictureView.size = profilePictureSize
         profilePictureView.update(
             publicKey: getUserHexEncodedPublicKey(),
@@ -461,6 +461,7 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
             case .threads:
                 let threadViewModel: SessionThreadViewModel = section.elements[indexPath.row]
                 let cell: FullConversationCell = tableView.dequeue(type: FullConversationCell.self, for: indexPath)
+                cell.accessibilityIdentifier = "Conversation list item"
                 cell.update(with: threadViewModel)
                 return cell
                 

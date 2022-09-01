@@ -177,6 +177,7 @@ CGFloat kIconViewLength = 24;
     [LKViewControllerUtilities setUpDefaultSessionStyleForVC:self withTitle:title customBackButton:YES];
     self.tableView.backgroundColor = UIColor.clearColor;
 
+    self.navigationItem.backBarButtonItem.accessibilityIdentifier = @"Navigate up";
     if (!self.isClosedGroup && !self.isOpenGroup) {
         [self updateNavBarButtons];
     }
@@ -264,6 +265,7 @@ CGFloat kIconViewLength = 24;
             rowLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 
             UISwitch *switchView = [UISwitch new];
+            switchView.accessibilityIdentifier = @"Disappearing messages toggle";
             switchView.on = strongSelf.isDisappearingMessagesEnabled;
             [switchView addTarget:strongSelf action:@selector(disappearingMessagesSwitchValueDidChange:)
                 forControlEvents:UIControlEventValueChanged];
@@ -326,6 +328,7 @@ CGFloat kIconViewLength = 24;
                 [topRow autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeBottom];
 
                 UISlider *slider = [UISlider new];
+                slider.accessibilityIdentifier = @"Time selector";
                 slider.maximumValue = (float)(strongSelf.disappearingMessagesDurations.count - 1);
                 slider.minimumValue = 0;
                 slider.tintColor = LKColors.accent;

@@ -61,6 +61,7 @@ final class InputView: UIView, InputViewButtonDelegate, InputTextViewDelegate, M
 
     private lazy var sendButton: InputViewButton = {
         let result = InputViewButton(icon: #imageLiteral(resourceName: "ArrowUp"), isSendButton: true, delegate: self)
+        result.accessibilityIdentifier = "Send message button"
         result.isHidden = true
         result.accessibilityLabel = NSLocalizedString("ATTACHMENT_APPROVAL_SEND_BUTTON", comment: "")
         return result
@@ -97,7 +98,9 @@ final class InputView: UIView, InputViewButtonDelegate, InputTextViewDelegate, M
         // setUpViewHierarchy() for why these values are the way they are.
         let adjustment = (InputViewButton.expandedSize - InputViewButton.size) / 2
         let maxWidth = UIScreen.main.bounds.width - 2 * InputViewButton.expandedSize - 2 * Values.smallSpacing - 2 * (Values.mediumSpacing - adjustment)
-        return InputTextView(delegate: self, maxWidth: maxWidth)
+        let result = InputTextView(delegate: self, maxWidth: maxWidth)
+        result.accessibilityIdentifier = "Message input box"
+        return result
     }()
 
     private lazy var disabledInputLabel: UILabel = {

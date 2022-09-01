@@ -7,6 +7,7 @@ extension ContextMenuVC {
     struct Action {
         let icon: UIImage?
         let title: String
+        let accessibilityId: String?
         let isEmojiAction: Bool
         let isEmojiPlus: Bool
         let isDismissAction: Bool
@@ -17,6 +18,7 @@ extension ContextMenuVC {
         init(
             icon: UIImage? = nil,
             title: String = "",
+            accessibilityId: String? = nil,
             isEmojiAction: Bool = false,
             isEmojiPlus: Bool = false,
             isDismissAction: Bool = false,
@@ -24,6 +26,7 @@ extension ContextMenuVC {
         ) {
             self.icon = icon
             self.title = title
+            self.accessibilityId = accessibilityId
             self.isEmojiAction = isEmojiAction
             self.isEmojiPlus = isEmojiPlus
             self.isDismissAction = isDismissAction
@@ -56,7 +59,8 @@ extension ContextMenuVC {
         static func delete(_ cellViewModel: MessageViewModel, _ delegate: ContextMenuActionDelegate?) -> Action {
             return Action(
                 icon: UIImage(named: "ic_trash"),
-                title: "TXT_DELETE_TITLE".localized()
+                title: "TXT_DELETE_TITLE".localized(),
+                accessibilityId: "Delete message"
             ) { delegate?.delete(cellViewModel) }
         }
 

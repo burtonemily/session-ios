@@ -17,10 +17,23 @@ final class NewConversationButtonSet : UIView {
     static let expandedButtonSize = CGFloat(72)
     
     // MARK: Components
-    private lazy var mainButton = NewConversationButton(isMainButton: true, icon: #imageLiteral(resourceName: "Plus").scaled(to: CGSize(width: iconSize, height: iconSize)))
-    private lazy var newDMButton = NewConversationButton(isMainButton: false, icon: #imageLiteral(resourceName: "Message").scaled(to: CGSize(width: iconSize, height: iconSize)))
-    private lazy var createClosedGroupButton = NewConversationButton(isMainButton: false, icon: #imageLiteral(resourceName: "Group").scaled(to: CGSize(width: iconSize, height: iconSize)))
-    private lazy var joinOpenGroupButton = NewConversationButton(isMainButton: false, icon: #imageLiteral(resourceName: "Globe").scaled(to: CGSize(width: iconSize, height: iconSize)))
+    private lazy var mainButton = NewConversationButton(
+        isMainButton: true,
+        icon: #imageLiteral(resourceName: "Plus").scaled(to: CGSize(width: iconSize, height: iconSize))
+    )
+    private lazy var newDMButton = NewConversationButton(
+        isMainButton: false,
+        icon: #imageLiteral(resourceName: "Message").scaled(to: CGSize(width: iconSize, height: iconSize))
+    )
+    private lazy var createClosedGroupButton = NewConversationButton(
+        isMainButton: false,
+        icon: #imageLiteral(resourceName: "Group").scaled(to: CGSize(width: iconSize, height: iconSize)),
+        accessibilityId: "Create group"
+    )
+    private lazy var joinOpenGroupButton = NewConversationButton(
+        isMainButton: false,
+        icon: #imageLiteral(resourceName: "Globe").scaled(to: CGSize(width: iconSize, height: iconSize))
+    )
     
     private lazy var newDMLabel: UILabel = {
         let result: UILabel = UILabel()
@@ -279,10 +292,11 @@ private final class NewConversationButton : UIImageView {
     var widthConstraint: NSLayoutConstraint!
     var heightConstraint: NSLayoutConstraint!
 
-    init(isMainButton: Bool, icon: UIImage) {
+    init(isMainButton: Bool, icon: UIImage, accessibilityId: String? = nil) {
         self.isMainButton = isMainButton
         self.icon = icon
         super.init(frame: CGRect.zero)
+        self.accessibilityIdentifier = accessibilityId
         setUpViewHierarchy()
         NotificationCenter.default.addObserver(self, selector: #selector(handleAppModeChangedNotification(_:)), name: .appModeChanged, object: nil)
     }

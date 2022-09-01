@@ -33,6 +33,7 @@ final class SettingsVC: BaseVC, AvatarViewHelperDelegate {
     
     private lazy var displayNameLabel: UILabel = {
         let result = UILabel()
+        result.accessibilityIdentifier = "Username"
         result.textColor = Colors.text
         result.font = .boldSystemFont(ofSize: Values.veryLargeFontSize)
         result.lineBreakMode = .byTruncatingTail
@@ -43,6 +44,7 @@ final class SettingsVC: BaseVC, AvatarViewHelperDelegate {
     
     private lazy var displayNameTextField: TextField = {
         let result = TextField(placeholder: NSLocalizedString("vc_settings_display_name_text_field_hint", comment: ""), usesDefaultHeight: false)
+        result.accessibilityIdentifier = "Username input"
         result.textAlignment = .center
         result.accessibilityLabel = "Edit display name text field"
         
@@ -374,6 +376,7 @@ final class SettingsVC: BaseVC, AvatarViewHelperDelegate {
             navigationItem.leftBarButtonItem = cancelButton
             
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleSaveDisplayNameButtonTapped))
+            doneButton.accessibilityIdentifier = "Apply"
             doneButton.tintColor = Colors.text
             doneButton.accessibilityLabel = "Done button"
             doneButton.isAccessibilityElement = true

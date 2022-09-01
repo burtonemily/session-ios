@@ -1609,6 +1609,7 @@ extension ConversationVC:
                         "delete_message_for_everyone".localized() :
                         String(format: "delete_message_for_me_and_recipient".localized(), threadName)
                     ),
+                    accessibilityIdentifier: "Delete for everyone",
                     style: .destructive
                 ) { [weak self] _ in
                     deleteRemotely(

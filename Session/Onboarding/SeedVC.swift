@@ -35,6 +35,7 @@ final class SeedVC: BaseVC {
     
     private lazy var mnemonicLabel: UILabel = {
         let result = UILabel()
+        result.accessibilityIdentifier = "Recovery Phrase"
         result.textColor = Colors.accent
         result.font = Fonts.spaceMono(ofSize: Values.mediumFontSize)
         result.numberOfLines = 0
@@ -58,6 +59,7 @@ final class SeedVC: BaseVC {
         setNavBarTitle(NSLocalizedString("vc_seed_title", comment: ""))
         // Set up navigation bar buttons
         let closeButton = UIBarButtonItem(image: #imageLiteral(resourceName: "X"), style: .plain, target: self, action: #selector(close))
+        closeButton.accessibilityIdentifier = "Navigate up"
         closeButton.tintColor = Colors.text
         navigationItem.leftBarButtonItem = closeButton
         // Set up title label

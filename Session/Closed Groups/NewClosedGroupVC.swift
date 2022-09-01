@@ -25,7 +25,11 @@ final class NewClosedGroupVC: BaseVC, UITableViewDataSource, UITableViewDelegate
     
     // MARK: - Components
     
-    private lazy var nameTextField = TextField(placeholder: "vc_create_closed_group_text_field_hint".localized())
+    private lazy var nameTextField: TextField = {
+        let result = TextField(placeholder: "vc_create_closed_group_text_field_hint".localized())
+        result.accessibilityIdentifier = "Group name input"
+        return result
+    }()
 
     private lazy var tableView: TableView = {
         let result: TableView = TableView()
@@ -128,6 +132,7 @@ final class NewClosedGroupVC: BaseVC, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = tableView.dequeue(type: UserCell.self, for: indexPath)
+        cell.accessibilityIdentifier = "Contact"
         cell.update(
             with: contactProfiles[indexPath.row].id,
             profile: contactProfiles[indexPath.row],

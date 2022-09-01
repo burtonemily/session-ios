@@ -13,6 +13,8 @@ final class DeletedMessageView: UIView {
     init(textColor: UIColor) {
         super.init(frame: CGRect.zero)
         
+        self.accessibilityIdentifier = "Deleted message"
+        
         setUpViewHierarchy(textColor: textColor)
     }
     

@@ -17,6 +17,7 @@ final class InfoMessageCell: MessageCell {
 
     private lazy var label: UILabel = {
         let result: UILabel = UILabel()
+        result.accessibilityIdentifier = "Configuration message"
         result.numberOfLines = 0
         result.lineBreakMode = .byWordWrapping
         result.font = .boldSystemFont(ofSize: Values.verySmallFontSize)
