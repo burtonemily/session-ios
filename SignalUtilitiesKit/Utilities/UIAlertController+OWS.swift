@@ -12,7 +12,7 @@ extension UIAlertController {
                 owsFailDebug("Missing representer.")
                 continue
             }
-            view.accessibilityIdentifier = action.accessibilityIdentifier
+            view.accessibilityLabel = action.accessibilityLabel
         }
     }
 }

@@ -219,7 +219,7 @@ const CGFloat kOWSTable_DefaultCellHeight = 45.f;
         UITableViewCell *cell = [OWSTableItem newCell];
         cell.textLabel.text = text;
         cell.accessoryType = accessoryType;
-        cell.accessibilityIdentifier = accessibilityIdentifier;
+        cell.accessibilityLabel = accessibilityIdentifier;
         cell.tintColor = LKColors.accent;
         return cell;
     };
@@ -272,7 +272,7 @@ const CGFloat kOWSTable_DefaultCellHeight = 45.f;
         [OWSTableItem configureCell:cell];
         cell.textLabel.text = text;
         cell.detailTextLabel.text = detailText;
-        cell.accessibilityIdentifier = accessibilityIdentifier;
+        cell.accessibilityLabel = accessibilityIdentifier;
         return cell;
     };
     return item;
@@ -330,7 +330,7 @@ const CGFloat kOWSTable_DefaultCellHeight = 45.f;
     item.customCellBlock = ^{
         UITableViewCell *cell = [OWSTableItem newCell];
         cell.textLabel.text = text;
-        cell.accessibilityIdentifier = accessibilityIdentifier;
+        cell.accessibilityLabel = accessibilityIdentifier;
         return cell;
     };
     return item;
@@ -476,7 +476,7 @@ const CGFloat kOWSTable_DefaultCellHeight = 45.f;
         [cellSwitch setOn:isOnBlock()];
         [cellSwitch addTarget:weakTarget action:selector forControlEvents:UIControlEventValueChanged];
         cellSwitch.enabled = isEnabledBlock();
-        cellSwitch.accessibilityIdentifier = accessibilityIdentifier;
+        cellSwitch.accessibilityLabel = accessibilityIdentifier;
 
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 

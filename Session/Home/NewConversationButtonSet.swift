@@ -80,11 +80,11 @@ final class NewConversationButtonSet : UIView {
     }
     
     private func setUpViewHierarchy() {
-        mainButton.accessibilityLabel = "Toggle conversation options button"
+        mainButton.accessibilityLabel = "New conversation button"
         mainButton.isAccessibilityElement = true
-        newDMButton.accessibilityLabel = "Start new one-on-one conversation button"
+        newDMButton.accessibilityLabel = "New direct message"
         newDMButton.isAccessibilityElement = true
-        createClosedGroupButton.accessibilityLabel = "Start new closed group button"
+        createClosedGroupButton.accessibilityLabel = "Create group"
         createClosedGroupButton.isAccessibilityElement = true
         joinOpenGroupButton.accessibilityLabel = "Join open group button"
         joinOpenGroupButton.isAccessibilityElement = true
@@ -296,7 +296,7 @@ private final class NewConversationButton : UIImageView {
         self.isMainButton = isMainButton
         self.icon = icon
         super.init(frame: CGRect.zero)
-        self.accessibilityIdentifier = accessibilityId
+        self.accessibilityLabel = accessibilityLabel
         setUpViewHierarchy()
         NotificationCenter.default.addObserver(self, selector: #selector(handleAppModeChangedNotification(_:)), name: .appModeChanged, object: nil)
     }

@@ -21,7 +21,7 @@ public class OWSFlatButton: UIView {
             guard let accessibilityIdentifier = self.accessibilityIdentifier else {
                 return
             }
-            button.accessibilityIdentifier = "\(accessibilityIdentifier).button"
+            button.accessibilityLabel = "\(accessibilityLabel).button"
         }
     }
 

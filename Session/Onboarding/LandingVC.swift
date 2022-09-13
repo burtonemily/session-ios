@@ -14,7 +14,7 @@ final class LandingVC: BaseVC {
     
     private lazy var registerButton: Button = {
         let result = Button(style: .prominentFilled, size: .large)
-        result.accessibilityIdentifier = "Create session ID"
+        result.accessibilityLabel = "Create session ID"
         result.setTitle(NSLocalizedString("vc_landing_register_button_title", comment: ""), for: UIControl.State.normal)
         result.titleLabel!.font = .boldSystemFont(ofSize: Values.mediumFontSize)
         result.addTarget(self, action: #selector(register), for: UIControl.Event.touchUpInside)

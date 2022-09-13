@@ -40,7 +40,7 @@
                                  if (selectedNotifType == option.intValue) {
                                      cell.accessoryType = UITableViewCellAccessoryCheckmark;
                                  }
-                                 cell.accessibilityIdentifier = ACCESSIBILITY_IDENTIFIER_WITH_NAME(NotificationSettingsOptionsViewController, [SMKPreferences accessibilityIdentifierForNotificationPreviewType:option.intValue]);
+                                 cell.accessibilityLabel = ACCESSIBILITY_IDENTIFIER_WITH_NAME(NotificationSettingsOptionsViewController, [SMKPreferences accessibilityIdentifierForNotificationPreviewType:option.intValue]);
                                  return cell;
                              }
                              actionBlock:^{

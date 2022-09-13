@@ -526,7 +526,7 @@ CGFloat ScaleFromIPhone5(CGFloat iPhone5Value)
                         handler:(void (^__nullable)(UIAlertAction *action))handler
 {
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:style handler:handler];
-    action.accessibilityIdentifier = accessibilityIdentifier;
+    action.accessibilityLabel = accessibilityIdentifier;
     return action;
 }
 

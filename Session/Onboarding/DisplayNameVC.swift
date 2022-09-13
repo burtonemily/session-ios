@@ -58,7 +58,7 @@ final class DisplayNameVC: BaseVC {
         
         // Set up register button
         let registerButton = Button(style: .prominentFilled, size: .large)
-        registerButton.accessibilityIdentifier = "Continue"
+        registerButton.accessibilityLabel = "Continue"
         registerButton.setTitle(NSLocalizedString("continue_2", comment: ""), for: UIControl.State.normal)
         registerButton.titleLabel!.font = .boldSystemFont(ofSize: Values.mediumFontSize)
         registerButton.addTarget(self, action: #selector(register), for: UIControl.Event.touchUpInside)

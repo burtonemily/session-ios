@@ -146,7 +146,7 @@ final class UserCell: UITableViewCell {
                 accessoryImageView.isHidden = false
                 accessoryImageView.image = icon.withRenderingMode(.alwaysTemplate)
                 accessoryImageView.tintColor = Colors.text
-                accessoryImageView.accessibilityIdentifier = "Done"
+                accessoryImageView.accessibilityLabel = "Done"
             case .x:
                 accessoryImageView.isHidden = false
                 accessoryImageView.image = #imageLiteral(resourceName: "X").withRenderingMode(.alwaysTemplate)

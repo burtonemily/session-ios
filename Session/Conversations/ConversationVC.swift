@@ -959,7 +959,7 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
     
     func updateNavBarButtons(threadData: SessionThreadViewModel?, initialVariant: SessionThread.Variant) {
         navigationItem.hidesBackButton = isShowingSearchUI
-        navigationItem.backBarButtonItem?.accessibilityIdentifier = "Navigate up"
+        navigationItem.backBarButtonItem?.accessibilityLabel = "Navigate up"
 
         if isShowingSearchUI {
             navigationItem.leftBarButtonItem = nil
@@ -1012,7 +1012,7 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
                     profilePictureView.addGestureRecognizer(tapGestureRecognizer)
 
                     let settingsButtonItem: UIBarButtonItem = UIBarButtonItem(customView: profilePictureView)
-                    settingsButtonItem.accessibilityIdentifier = "More options"
+                    settingsButtonItem.accessibilityLabel = "More options"
                     settingsButtonItem.isAccessibilityElement = true
                     
                     if SessionCall.isEnabled && !threadData.threadIsNoteToSelf {

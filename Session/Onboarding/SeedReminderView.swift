@@ -63,7 +63,8 @@ final class SeedReminderView: UIView {
         labelStackView.spacing = 4
         // Set up button
         let button = Button(style: .prominentOutline, size: .small)
-        button.accessibilityIdentifier = "Continue"
+        button.accessibilityLabel = "Continue"
+        button.accessibilityIdentifier  = "Continue"
         button.titleLabel!.font = .boldSystemFont(ofSize: CGFloat(13))
         button.setTitle(NSLocalizedString("continue_2", comment: ""), for: UIControl.State.normal)
         button.set(.width, to: 96)

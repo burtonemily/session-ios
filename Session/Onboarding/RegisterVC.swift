@@ -12,12 +12,11 @@ final class RegisterVC : BaseVC {
     // MARK: Components
     private lazy var publicKeyLabel: UILabel = {
         let result = UILabel()
-        result.accessibilityIdentifier = "Session ID"
+        result.accessibilityLabel = "Session ID"
         result.textColor = Colors.text
         result.font = Fonts.spaceMono(ofSize: isIPhone5OrSmaller ? Values.mediumFontSize : 20)
         result.numberOfLines = 0
-        result.lineBreakMode = .byCharWrapping
-        result.accessibilityLabel = "Session ID label"
+        result.lineBreakMode = .byCharWrappingdfgfgh
         return result
     }()
     
@@ -77,7 +76,7 @@ final class RegisterVC : BaseVC {
         let bottomSpacer = UIView.vStretchingSpacer()
         // Set up register button
         let registerButton = Button(style: .prominentFilled, size: .large)
-        registerButton.accessibilityIdentifier = "Continue"
+        registerButton.accessibilityLabel = "Continue"
         registerButton.setTitle(NSLocalizedString("continue_2", comment: ""), for: UIControl.State.normal)
         registerButton.titleLabel!.font = .boldSystemFont(ofSize: Values.mediumFontSize)
         registerButton.addTarget(self, action: #selector(register), for: UIControl.Event.touchUpInside)

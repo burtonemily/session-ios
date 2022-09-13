@@ -197,7 +197,7 @@ private final class EnterPublicKeyVC : UIViewController {
     // MARK: Components
     private lazy var publicKeyTextView: TextView = {
         let result = TextView(placeholder: NSLocalizedString("vc_enter_public_key_text_field_hint", comment: ""))
-        result.accessibilityIdentifier = "Session id input box"
+        result.accessibilityLabel = "Session id input box"
         result.autocapitalizationType = .none
         return result
     }()
@@ -261,7 +261,7 @@ private final class EnterPublicKeyVC : UIViewController {
         buttonContainer.addArrangedSubview(shareButton)
         // Next button
         let nextButton = Button(style: .prominentOutline, size: .large)
-        nextButton.accessibilityIdentifier = "Next"
+        nextButton.accessibilityLabel = "Next"
         nextButton.setTitle(NSLocalizedString("next", comment: ""), for: UIControl.State.normal)
         nextButton.addTarget(self, action: #selector(startNewDMIfPossible), for: UIControl.Event.touchUpInside)
         let nextButtonContainer = UIView(wrapping: nextButton, withInsets: UIEdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 80), shouldAdaptForIPadWithWidth: Values.iPadButtonWidth)

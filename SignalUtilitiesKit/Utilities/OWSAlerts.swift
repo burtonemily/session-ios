@@ -41,7 +41,7 @@ import SessionUtilitiesKit
 
         let actionTitle = buttonTitle ?? NSLocalizedString("BUTTON_OK", comment: "")
         let okAction = UIAlertAction(title: actionTitle, style: .default, handler: buttonAction)
-        okAction.accessibilityIdentifier = "OWSAlerts.\("ok")"
+        okAction.accessibilityLabel = "OWSAlerts.\("ok")"
         alert.addAction(okAction)
         fromViewController?.presentAlert(alert)
     }
@@ -55,7 +55,7 @@ import SessionUtilitiesKit
 
         let actionTitle = proceedTitle ?? NSLocalizedString("BUTTON_OK", comment: "")
         let okAction = UIAlertAction(title: actionTitle, style: .default, handler: proceedAction)
-        okAction.accessibilityIdentifier = "OWSAlerts.\("ok")"
+        okAction.accessibilityLabel = "OWSAlerts.\("ok")"
         alert.addAction(okAction)
 
         CurrentAppContext().frontmostViewController()?.presentAlert(alert)
@@ -72,7 +72,7 @@ import SessionUtilitiesKit
             Logger.debug("Cancel item")
             // Do nothing.
         }
-        action.accessibilityIdentifier = "OWSAlerts.\("cancel")"
+        action.accessibilityLabel = "OWSAlerts.\("cancel")"
         return action
     }
 }

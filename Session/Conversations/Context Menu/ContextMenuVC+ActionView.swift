@@ -20,7 +20,7 @@ extension ContextMenuVC {
             
             super.init(frame: CGRect.zero)
             
-            self.accessibilityIdentifier = action.accessibilityId
+            self.accessibilityLabel = action.accessibilityId
             
             setUpViewHierarchy()
         }

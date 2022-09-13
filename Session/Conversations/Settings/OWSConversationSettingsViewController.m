@@ -177,7 +177,7 @@ CGFloat kIconViewLength = 24;
     [LKViewControllerUtilities setUpDefaultSessionStyleForVC:self withTitle:title customBackButton:YES];
     self.tableView.backgroundColor = UIColor.clearColor;
 
-    self.navigationItem.backBarButtonItem.accessibilityIdentifier = @"Navigate up";
+    self.navigationItem.backBarButtonItem.accessibilityLabel = @"Navigate up";
     if (!self.isClosedGroup && !self.isOpenGroup) {
         [self updateNavBarButtons];
     }
@@ -265,7 +265,7 @@ CGFloat kIconViewLength = 24;
             rowLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 
             UISwitch *switchView = [UISwitch new];
-            switchView.accessibilityIdentifier = @"Disappearing messages toggle";
+            switchView.accessibilityLabel = @"Disappearing messages toggle";
             switchView.on = strongSelf.isDisappearingMessagesEnabled;
             [switchView addTarget:strongSelf action:@selector(disappearingMessagesSwitchValueDidChange:)
                 forControlEvents:UIControlEventValueChanged];
@@ -297,7 +297,7 @@ CGFloat kIconViewLength = 24;
 
             cell.userInteractionEnabled = !strongSelf.hasLeftGroup;
 
-            cell.accessibilityIdentifier = ACCESSIBILITY_IDENTIFIER_WITH_NAME(OWSConversationSettingsViewController, @"disappearing_messages");
+            cell.accessibilityLabel = ACCESSIBILITY_IDENTIFIER_WITH_NAME(OWSConversationSettingsViewController, @"disappearing_messages");
 
             return cell;
          } customRowHeight:UITableViewAutomaticDimension actionBlock:nil]];
@@ -328,7 +328,7 @@ CGFloat kIconViewLength = 24;
                 [topRow autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeBottom];
 
                 UISlider *slider = [UISlider new];
-                slider.accessibilityIdentifier = @"Time selector";
+                slider.accessibilityLabel = @"Time selector";
                 slider.maximumValue = (float)(strongSelf.disappearingMessagesDurations.count - 1);
                 slider.minimumValue = 0;
                 slider.tintColor = LKColors.accent;
@@ -344,7 +344,7 @@ CGFloat kIconViewLength = 24;
 
                 cell.userInteractionEnabled = !strongSelf.hasLeftGroup;
 
-                cell.accessibilityIdentifier = ACCESSIBILITY_IDENTIFIER_WITH_NAME(
+                cell.accessibilityLabel = ACCESSIBILITY_IDENTIFIER_WITH_NAME(
                     OWSConversationSettingsViewController, @"disappearing_messages_duration");
 
                 return cell;
@@ -413,7 +413,7 @@ CGFloat kIconViewLength = 24;
             NSInteger sound = [SMKSound notificationSoundFor:strongSelf.threadId];
             cell.detailTextLabel.text = [SMKSound displayNameFor:sound];
 
-            cell.accessibilityIdentifier = ACCESSIBILITY_IDENTIFIER_WITH_NAME(
+            cell.accessibilityLabel = ACCESSIBILITY_IDENTIFIER_WITH_NAME(
                 OWSConversationSettingsViewController, @"notifications");
 
             return cell;
@@ -469,7 +469,7 @@ CGFloat kIconViewLength = 24;
 
                 cell.userInteractionEnabled = !strongSelf.hasLeftGroup;
 
-                cell.accessibilityIdentifier = ACCESSIBILITY_IDENTIFIER_WITH_NAME(OWSConversationSettingsViewController, @"notify_for_mentions_only");
+                cell.accessibilityLabel = ACCESSIBILITY_IDENTIFIER_WITH_NAME(OWSConversationSettingsViewController, @"notify_for_mentions_only");
 
                 return cell;
              } customRowHeight:UITableViewAutomaticDimension actionBlock:nil]];
@@ -563,7 +563,7 @@ CGFloat kIconViewLength = 24;
                     accessibilityIdentifier:(NSString *)accessibilityIdentifier
 {
     UITableViewCell *cell = [self cellWithName:name iconName:iconName];
-    cell.accessibilityIdentifier = accessibilityIdentifier;
+    cell.accessibilityLabel = accessibilityIdentifier;
     return cell;
 }
 
@@ -573,7 +573,7 @@ CGFloat kIconViewLength = 24;
 {
     UITableViewCell *cell = [self cellWithName:name iconName:iconName];
     cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.accessibilityIdentifier = accessibilityIdentifier;
+    cell.accessibilityLabel = accessibilityIdentifier;
     return cell;
 }
 
