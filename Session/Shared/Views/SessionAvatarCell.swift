@@ -105,6 +105,8 @@ class SessionAvatarCell: UITableViewCell {
     private let descriptionLabel: SRCopyableLabel = {
         let label: SRCopyableLabel = SRCopyableLabel()
         label.accessibilityLabel = "Session ID"
+        label.accessibilityIdentifier = "Session ID"
+
         label.translatesAutoresizingMaskIntoConstraints = false
         label.themeTextColor = .textPrimary
         label.textAlignment = .center
@@ -230,6 +232,7 @@ class SessionAvatarCell: UITableViewCell {
             }
         }()
         descriptionLabel.text = threadViewModel.threadId
+        descriptionLabel.accessibilityLabel = threadViewModel.threadId
         descriptionLabel.isHidden = (threadViewModel.threadVariant != .contact)
         descriptionLabel.isUserInteractionEnabled = (
             threadViewModel.threadVariant == .contact ||
