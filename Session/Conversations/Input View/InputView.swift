@@ -89,9 +89,6 @@ final class InputView: UIView, InputViewButtonDelegate, InputTextViewDelegate, M
 
     private lazy var mentionsViewContainer: UIView = {
         let result: UIView = UIView()
-        result.accessibilityLabel = "Mentions list"
-        result.accessibilityIdentifier = "Mentions list"
-        result.isAccessibilityElement = true
         result.alpha = 0
         
         let backgroundView = UIView()

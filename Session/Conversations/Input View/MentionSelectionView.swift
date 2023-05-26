@@ -24,7 +24,9 @@ final class MentionSelectionView: UIView, UITableViewDataSource, UITableViewDele
     
     private lazy var tableView: UITableView = {
         let result: UITableView = UITableView()
-        result.accessibilityLabel = "Contact"
+        result.accessibilityLabel = "Mentions list"
+        result.accessibilityIdentifier = "Mentions list"
+        result.isAccessibilityElement = true
         result.dataSource = self
         result.delegate = self
         result.separatorStyle = .none
@@ -92,6 +94,10 @@ final class MentionSelectionView: UIView, UITableViewDataSource, UITableViewDele
             ),
             isLast: (indexPath.row == (candidates.count - 1))
         )
+        
+        cell.accessibilityIdentifier = "Contact mentions"
+        cell.accessibilityLabel = candidates[indexPath.row].profile.name
+        cell.isAccessibilityElement = true
         
         return cell
     }
