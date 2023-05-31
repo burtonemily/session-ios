@@ -94,6 +94,8 @@ class ConversationSettingsViewModel: SessionTableViewModel<NoNav, ConversationSe
                             title: "CONVERSATION_SETTINGS_BLOCKED_CONTACTS_TITLE".localized(),
                             tintColor: .danger,
                             shouldHaveBackground: false,
+                            accessibilityIdentifier: "Blocked contacts",
+                            accessibilityLabel: "Blocked contacts",
                             onTap: { [weak self] in
                                 self?.transitionToScreen(BlockedContactsViewController())
                             }

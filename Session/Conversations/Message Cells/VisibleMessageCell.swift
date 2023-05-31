@@ -355,6 +355,9 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
             playbackInfo: playbackInfo,
             lastSearchText: lastSearchText
         )
+        bubbleView.accessibilityIdentifier = "Message Body"
+        bubbleView.accessibilityLabel = bodyTappableLabel?.attributedText?.string
+        bubbleView.isAccessibilityElement = true
         
         // Author label
         authorLabelTopConstraint.constant = (shouldAddTopInset ? Values.mediumSpacing : 0)
