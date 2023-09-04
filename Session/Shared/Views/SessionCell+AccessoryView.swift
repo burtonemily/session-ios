@@ -380,6 +380,8 @@ extension SessionCell {
                     let isSelected: Bool = isSelectedRetriever()
                     let wasOldSelection: Bool = (!isSelected && storedSelection)
                 
+                    radioView.isAccessibilityElement = true
+                
                     if isSelected || wasOldSelection {
                         radioView.accessibilityTraits.insert(.selected)
                         radioView.accessibilityValue = "selected"
