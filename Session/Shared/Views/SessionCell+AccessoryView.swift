@@ -373,6 +373,14 @@ extension SessionCell {
                 case .radio(let size, let isSelectedRetriever, let storedSelection, let accessibility):
                     let isSelected: Bool = isSelectedRetriever()
                     let wasOldSelection: Bool = (!isSelected && storedSelection)
+                
+                    if isSelected || wasOldSelection {
+                        radioView.accessibilityTraits.insert(.selected)
+                        radioView.accessibilityValue = "selected"
+                    } else {
+                        radioView.accessibilityTraits.remove(.selected)
+                        radioView.accessibilityValue = nil
+                    }
                     
                     radioBorderView.isHidden = false
                     radioBorderView.themeBorderColor = {
