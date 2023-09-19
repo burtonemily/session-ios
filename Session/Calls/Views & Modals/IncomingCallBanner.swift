@@ -46,7 +46,8 @@ final class IncomingCallBanner: UIView, UIGestureRecognizerDelegate {
         result.addTarget(self, action: #selector(answerCall), for: .touchUpInside)
         result.set(.width, to: 48)
         result.set(.height, to: 48)
-        
+        result.isAccessibilityElement = true
+        result.accessibilityIdentifier = "Answer call"
         return result
     }()
     
@@ -64,6 +65,8 @@ final class IncomingCallBanner: UIView, UIGestureRecognizerDelegate {
         result.addTarget(self, action: #selector(endCall), for: .touchUpInside)
         result.set(.width, to: 48)
         result.set(.height, to: 48)
+        result.isAccessibilityElement = true
+        result.accessibilityIdentifier = "End call"
         
         return result
     }()

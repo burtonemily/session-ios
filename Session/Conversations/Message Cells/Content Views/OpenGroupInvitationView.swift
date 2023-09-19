@@ -36,7 +36,8 @@ final class OpenGroupInvitationView: UIView {
         titleLabel.text = name
         titleLabel.themeTextColor = textColor
         titleLabel.lineBreakMode = .byTruncatingTail
-        
+        titleLabel.isAccessibilityElement = true
+        titleLabel.accessibilityLabel = titleLabel.text
         // Subtitle
         let subtitleLabel = UILabel()
         subtitleLabel.font = .systemFont(ofSize: Values.smallFontSize)

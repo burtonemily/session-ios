@@ -252,6 +252,8 @@ final class ConversationVC: BaseVC, SessionUtilRespondingViewController, Convers
             self?.scrollToBottom(isAnimated: true)
         }
         result.alpha = 0
+        result.isAccessibilityElement = true
+        result.accessibilityIdentifier = "Scroll button"
         
         return result
     }()
